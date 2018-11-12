@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.Web.Http;
 
 // https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x804 上介绍了“空白页”项模板
 
@@ -25,6 +26,16 @@ namespace XiaoShuoApp3
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        
+
+        private async void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            HttpClient client = new HttpClient();
+            Uri uri = new Uri("https://www.cangqionglongqi.com/fanrenxiuxianzhuan/");
+            string MuluHtml = await client.GetStringAsync(uri);
+            
         }
     }
 }
