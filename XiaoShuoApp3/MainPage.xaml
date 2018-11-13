@@ -5,26 +5,42 @@
     xmlns:local="using:XiaoShuoApp3"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local1="using:XiaoShuoApp3.Models"
     mc:Ignorable="d"
     Loaded="Page_Loaded"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid Margin="0,32,0,0">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <ListView Name="MuluListView">
+        <ListView Name="MuluListView" ItemsSource="{x:Bind Mulus}" 
+                  ItemClick="MuluListView_ItemClick" 
+                  IsItemClickEnabled="True">
             <ListView.ItemTemplate>
-                <DataTemplate >
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock></TextBlock>
-                        <TextBlock></TextBlock>
+                <DataTemplate x:DataType="local1:Mulu">
+                    <StackPanel>
+                        <TextBlock Text="{x:Bind ChapterName}" FontSize="20"></TextBlock>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <TextBlock Grid.Column="1" TextWrapping="Wrap" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="22"></TextBlock>
+        <Border Grid.Column="1" Background="#FFC1FFC1">
+            <ScrollViewer VerticalScrollMode="Auto">
+                <TextBlock TextWrapping="Wrap" 
+                   HorizontalAlignment="Stretch" 
+                   VerticalAlignment="Stretch" 
+                           LineHeight="6"
+                           
+                   FontSize="22" 
+                   Name="ContentTextBlock" 
+                           Margin="10,0,10,10"
+                   Text="{x:Bind xiaoShuoContent,Mode=TwoWay}"></TextBlock>
+            </ScrollViewer>
+            
+        </Border>
+        
     </Grid>
 </Page>

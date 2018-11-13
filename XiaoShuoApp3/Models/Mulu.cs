@@ -12,5 +12,7 @@ namespace XiaoShuoApp3.Models
 
         public string ChapterName { get; set; }
 
+        public string Link { get; set; }
+
     }
 }
