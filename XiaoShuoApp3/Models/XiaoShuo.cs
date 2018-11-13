@@ -37,9 +37,9 @@ namespace XiaoShuoApp3.Models
             //替换掉 < 和 > 标记
             Htmlstring = Htmlstring.Replace("<", "");
             Htmlstring = Htmlstring.Replace(">", "");
-            Htmlstring = Htmlstring.Replace("^(\r\n)+", "");
-            Htmlstring = Htmlstring.Replace("^(\r)+", "");
-            Htmlstring = Htmlstring.Replace("^(\n)+", "");
+            Htmlstring = Htmlstring.Replace("^\r\n", "");
+            Htmlstring = Htmlstring.Replace("^\r", "");
+            Htmlstring = Htmlstring.Replace("^\n", "");
             //返回去掉html标记的字符串
             return Htmlstring;
         }
