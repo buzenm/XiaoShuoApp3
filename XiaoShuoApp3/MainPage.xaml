@@ -28,15 +28,14 @@
             </ListView.ItemTemplate>
         </ListView>
         <Border Grid.Column="1" Background="#FFC1FFC1">
-            <ScrollViewer VerticalScrollMode="Auto">
+            <ScrollViewer VerticalScrollMode="Auto" Name="ContentScrollViewer">
                 <TextBlock TextWrapping="Wrap" 
                    HorizontalAlignment="Stretch" 
                    VerticalAlignment="Stretch" 
-                           LineHeight="6"
-                           
-                   FontSize="22" 
+                           LineHeight="25"
+                   FontSize="25" 
                    Name="ContentTextBlock" 
-                           Margin="10,0,10,10"
+                           Margin="10,20,10,60"
                    Text="{x:Bind xiaoShuoContent,Mode=TwoWay}"></TextBlock>
             </ScrollViewer>
             

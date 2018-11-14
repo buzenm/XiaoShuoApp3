@@ -84,6 +84,7 @@ namespace XiaoShuoApp3
             ContentHtml = strs[1];
             xiaoShuoContent = XiaoShuo.TextNoHTML(ContentHtml);
             this.Bindings.Update();
+            ContentScrollViewer.ChangeView(0, 0, 1);
         }
     }
 }

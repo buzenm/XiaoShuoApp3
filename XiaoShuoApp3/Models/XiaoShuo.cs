@@ -28,18 +28,23 @@ namespace XiaoShuoApp3.Models
             Htmlstring = Regex.Replace(Htmlstring, @"&(lt|#60);", "<", RegexOptions.IgnoreCase);
             Htmlstring = Regex.Replace(Htmlstring, @"&(gt|#62);", ">", RegexOptions.IgnoreCase);
             Htmlstring = Regex.Replace(Htmlstring, @"(&nbsp;){4,}", "\r\n\t");
-            Htmlstring = Regex.Replace(Htmlstring, @"&(nbsp|#160);", "   ", RegexOptions.IgnoreCase);
+            Htmlstring = Regex.Replace(Htmlstring, @"(&nbsp;\.\.\.)", "\r\n\t...");
+            Htmlstring = Regex.Replace(Htmlstring, @"&(nbsp|#160);", "\t", RegexOptions.IgnoreCase);
             Htmlstring = Regex.Replace(Htmlstring, @"&(iexcl|#161);", "/xa1", RegexOptions.IgnoreCase);
             Htmlstring = Regex.Replace(Htmlstring, @"&(cent|#162);", "/xa2", RegexOptions.IgnoreCase);
             Htmlstring = Regex.Replace(Htmlstring, @"&(pound|#163);", "/xa3", RegexOptions.IgnoreCase);
             Htmlstring = Regex.Replace(Htmlstring, @"&(copy|#169);", "/xa9", RegexOptions.IgnoreCase);
             Htmlstring = Regex.Replace(Htmlstring, @"&#(/d+);", "", RegexOptions.IgnoreCase);
             //替换掉 < 和 > 标记
+
             Htmlstring = Htmlstring.Replace("<", "");
             Htmlstring = Htmlstring.Replace(">", "");
-            Htmlstring = Htmlstring.Replace("^\r\n", "");
-            Htmlstring = Htmlstring.Replace("^\r", "");
-            Htmlstring = Htmlstring.Replace("^\n", "");
+            Htmlstring = Htmlstring.Replace("(《》)", "");
+            //Htmlstring = Htmlstring.Replace("^\r\n", "");
+            Htmlstring = Regex.Replace(Htmlstring, @"^(\r\n)+|(\r\n)+$", "");
+            Htmlstring = Regex.Replace(Htmlstring, @"(\t)+$", "");
+            //Htmlstring = Htmlstring.Replace("^\r", "");
+            //Htmlstring = Htmlstring.Replace("^\n", "");
             //返回去掉html标记的字符串
             return Htmlstring;
         }
