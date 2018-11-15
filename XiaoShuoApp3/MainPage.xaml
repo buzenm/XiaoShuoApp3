@@ -8,7 +8,14 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
+        <Frame Name="LeftFrame" Background="{ThemeResource SystemControlAltMediumLowAcrylicWindowMediumBrush}" Padding="0,32,0,0"></Frame>
+        <Frame Name="RightFrame" Grid.Column="1" Padding="0,32,0,0"></Frame>
+        
     </Grid>
 </Page>
