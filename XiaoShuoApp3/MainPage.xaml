@@ -15,7 +15,7 @@
         </Grid.ColumnDefinitions>
 
         <Frame Name="LeftFrame" Background="{ThemeResource SystemControlAltMediumLowAcrylicWindowMediumBrush}" Padding="0,32,0,0"></Frame>
-        <Frame Name="RightFrame" Grid.Column="1" Padding="0,32,0,0"></Frame>
+        <Frame Name="RightFrame" Grid.Column="1"></Frame>
         
     </Grid>
 </Page>
