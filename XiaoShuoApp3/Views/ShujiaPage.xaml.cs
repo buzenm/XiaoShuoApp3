@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -12,6 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using XiaoShuoApp3.Models;
 
 // https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
 
@@ -26,5 +28,13 @@ namespace XiaoShuoApp3.Views
         {
             this.InitializeComponent();
         }
+        public ObservableCollection<Book> books = new ObservableCollection<Book>();
+        private void SearchAppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            string bookName = PinYinHelper.ToPinYin(BookNameTextBox.Text);
+
+        }
+
+
     }
 }
