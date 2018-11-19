@@ -5,6 +5,7 @@
     xmlns:local="using:XiaoShuoApp3.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local1="using:XiaoShuoApp3.Models"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -14,14 +15,16 @@
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <GridView Background="{ThemeResource SystemControlAltMediumLowAcrylicWindowMediumBrush}">
+        <GridView Background="{ThemeResource SystemControlAltMediumLowAcrylicWindowMediumBrush}"
+                  ItemsSource="{x:Bind books,Mode=TwoWay}">
             <GridView.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="local1:Book">
                     <TextBlock Height="60"
                                Width="30"
                                FontSize="30"
                                FontWeight="Bold"
-                               Margin="15">
+                               Margin="15"
+                               Text="{x:Bind Name}">
                         
                     </TextBlock>
                 </DataTemplate>

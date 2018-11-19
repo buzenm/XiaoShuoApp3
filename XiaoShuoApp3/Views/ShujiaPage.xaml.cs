@@ -41,7 +41,7 @@ namespace XiaoShuoApp3.Views
             {
                 Book book = new Book();
                 book.Name = BookNameTextBox.Text;
-                book.Link= "https://www.cangqionglongqi.com/"+bookName+"/";
+                book.Link= "https://www.cangqionglongqi.com/"+ Regex.Replace(bookName, @"\s+", "") + "/";
                 if (!books.Contains(book))
                 {
                     books.Add(book);
@@ -58,7 +58,8 @@ namespace XiaoShuoApp3.Views
         public async Task<bool> IsExitedBookAsync(string bookName)
         {
             HttpClient client = new HttpClient();
-            Uri uri = new Uri("https://www.cangqionglongqi.com/"+bookName+"/");
+            //Regex regex = new Regex(@"\s+");
+            Uri uri = new Uri("https://www.cangqionglongqi.com/"+Regex.Replace(bookName,@"\s+","")+"/");
 
 
             //string MuluHtml = await client.GetStringAsync();
