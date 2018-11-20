@@ -7,34 +7,15 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <!--<Page.Resources>
-        <ResourceDictionary x:Name="2"></ResourceDictionary>
-        <Storyboard x:Name="1"></Storyboard>
-        <ResourceDictionary>
-            <ResourceDictionary x:Name="2"></ResourceDictionary>
-            <Storyboard x:Name="1"></Storyboard>
-        </ResourceDictionary>
-    </Page.Resources>-->
+
     <Grid>
-        
-        <Border Background="#FFAEF9B1">
+        <Border Background="#FF9DE2A0">
             <TextBlock></TextBlock>
         </Border>
 
-        <CommandBar Template="{StaticResource AcrylicCommandBarTemplate}" Background="Transparent" 
-                    VerticalAlignment="Bottom"
-                    
-                    >
-            
+        <CommandBar Background="Transparent" VerticalAlignment="Bottom">
             <AppBarButton></AppBarButton>
-            
-            
-            <CommandBar.SecondaryCommands>
-                
-                <AppBarButton></AppBarButton>
-            </CommandBar.SecondaryCommands>
-            
-            
+            <AppBarButton></AppBarButton>
         </CommandBar>
     </Grid>
 </Page>
